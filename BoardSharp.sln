@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoardSharp", "ChessSharp\BoardSharp.csproj", "{8151F6AE-8467-4B19-8290-611C8942FD65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoardSharp", "BoardSharp\BoardSharp.csproj", "{8151F6AE-8467-4B19-8290-611C8942FD65}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

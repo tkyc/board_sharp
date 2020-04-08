@@ -25,6 +25,8 @@ namespace BoardSharp
 
             ChessBoard myChessBoard = new ChessBoard(8, 8);
             myChessBoard.InitBoardGui(this);
+
+            Trace.WriteLine(myChessBoard);
         }
     }
 }
