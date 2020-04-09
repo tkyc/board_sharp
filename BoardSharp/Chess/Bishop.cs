@@ -6,20 +6,20 @@ using BoardSharp.Common;
 namespace BoardSharp.Chess
 {
     /// <summary>
-    /// Pawn chess piece class.
+    /// Bishop chess piece class.
     /// </summary>
-    public class Pawn : ChessPiece
+    class Bishop : ChessPiece
     {
         /// <summary>
-        /// Pawn constructor.
+        /// Bishop constructor.
         /// </summary>
-        /// <param name="position">The initial/current position of the pawn.</param>
-        public Pawn(Tile position) : base("Pawn", position, ChessPieceEnum.Pawn) {}
+        /// <param name="position">The initial/current position of the bishop.</param>
+        public Bishop(Tile position) : base("Bishop", position, ChessPieceEnum.Bishop) {}
 
         /// <summary>
-        /// Determines if the move for a pawn piece is valid.
+        /// Determines if the move for a bishop piece is valid.
         /// </summary>
-        /// <param name="fromTile">The inital tile of the pawn piece.</param>
+        /// <param name="fromTile">The inital tile of the bishop piece.</param>
         /// <param name="toTile">The tile to move to.</param>
         /// <returns>A bool indicating whether the move is legal</returns>
         public override bool isValidMove(Tile fromTile, Tile toTile)

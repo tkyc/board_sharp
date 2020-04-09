@@ -8,7 +8,7 @@ namespace BoardSharp.Common
     /// <summary>
     /// Tile class. A tile on the game board.
     /// </summary>
-    sealed class Tile : Button
+    public sealed class Tile : Button
     {
         /// <summary>
         /// Tile x-coordinate.

@@ -23,7 +23,7 @@ namespace BoardSharp
         {
             InitializeComponent();
 
-            ChessBoard myChessBoard = new ChessBoard(8, 8);
+            ChessBoard myChessBoard = new ChessBoard();
             myChessBoard.InitBoardGui(this);
 
             Trace.WriteLine(myChessBoard);

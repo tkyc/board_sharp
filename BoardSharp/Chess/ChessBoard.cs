@@ -6,9 +6,15 @@ using BoardSharp.Common;
 
 namespace BoardSharp.Chess
 {
-    class ChessBoard : Board
+    /// <summary>
+    /// Chess board class.
+    /// </summary>
+    public class ChessBoard : Board
     {
-        public ChessBoard(int rows, int columns) : base(rows, columns) 
+        /// <summary>
+        /// ChessBoard constructor.
+        /// </summary>
+        public ChessBoard() : base(8, 8) 
         {
             for (int row = 0; row < _rows; row++)
             {
@@ -29,7 +35,7 @@ namespace BoardSharp.Chess
         /// <returns>A bool indicating if the move/set was successful.</returns>
         public override bool SetPlayPieceAt(Tile tile, PlayPiece playPiece)
         {
-            return ((ChessPiece) playPiece).move(tile);
+            return ((ChessPiece) playPiece).moveTo(tile);
         }
     }
 }

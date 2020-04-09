@@ -10,7 +10,7 @@ namespace BoardSharp.Common
     /// Generic board object.
     /// FYI -- "row" is synonymous with "x" coordinate and "column" is synonymous with "y" coordinate.
     /// </summary>
-    abstract class Board : Grid
+    public abstract class Board : Grid
     {
         /// <summary>
         /// Number of rows within the board.
@@ -76,7 +76,7 @@ namespace BoardSharp.Common
         /// </summary>
         /// <param name="tile">The tile to get the play piece at.</param>
         /// <returns>The play piece at the designated tile.</returns>
-        public PlayPiece GetPlayPieceAt(Tile tile)
+        public virtual PlayPiece GetPlayPieceAt(Tile tile)
         {
             return tile._playPiece;
         }

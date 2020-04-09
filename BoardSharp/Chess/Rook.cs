@@ -6,18 +6,18 @@ using BoardSharp.Common;
 namespace BoardSharp.Chess
 {
     /// <summary>
-    /// Pawn chess piece class.
+    /// Rook chess piece class.
     /// </summary>
-    public class Pawn : ChessPiece
+    class Rook : ChessPiece
     {
         /// <summary>
-        /// Pawn constructor.
+        /// Rook constructor.
         /// </summary>
-        /// <param name="position">The initial/current position of the pawn.</param>
-        public Pawn(Tile position) : base("Pawn", position, ChessPieceEnum.Pawn) {}
+        /// <param name="position">The initial/current position of the rook.</param>
+        public Rook(Tile position) : base("Rook", position, ChessPieceEnum.Rook) {}
 
         /// <summary>
-        /// Determines if the move for a pawn piece is valid.
+        /// Determines if the move for a rook piece is valid.
         /// </summary>
         /// <param name="fromTile">The inital tile of the pawn piece.</param>
         /// <param name="toTile">The tile to move to.</param>
