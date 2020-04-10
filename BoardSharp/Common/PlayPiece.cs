@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace BoardSharp.Common
 {
@@ -14,6 +14,8 @@ namespace BoardSharp.Common
         /// </summary>
         public string _name { get; }
 
+        public Image _playPieceImage { get; }
+
         /// <summary>
         /// The tile the play piece is currently located at.
         /// </summary>
@@ -24,10 +26,14 @@ namespace BoardSharp.Common
         /// </summary>
         /// <param name="name">Name of the play piece.</param>
         /// <param name="tile">The initial/current position of the play piece.</param>
-        public PlayPiece(string name, Tile tile)
+        public PlayPiece(string name,  Tile tile)
         {
             _name = name;
             _tile = tile;
+
+            Image playPieceImage = new Image();
+            playPieceImage.Source = new BitmapImage(new Uri($"pack://application:,,,/Chess/Images/{_name}.png"));
+            _playPieceImage = playPieceImage;
         }
     }
 }

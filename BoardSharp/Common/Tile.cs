@@ -11,6 +11,11 @@ namespace BoardSharp.Common
     public sealed class Tile : Button
     {
         /// <summary>
+        /// The current play piece on this tile.
+        /// </summary>
+        private PlayPiece _playPiece;
+
+        /// <summary>
         /// Tile x-coordinate.
         /// </summary>
         public int _x { get; }
@@ -19,11 +24,6 @@ namespace BoardSharp.Common
         /// Tile y-coordinate.
         /// </summary>
         public int _y { get; }
-
-        /// <summary>
-        /// The current play piece on this tile.
-        /// </summary>
-        public PlayPiece _playPiece { get; set; }
 
         /// <summary>
         /// The tile's width in pixels.
@@ -47,6 +47,15 @@ namespace BoardSharp.Common
             this._playPiece = null;
             this.Width = WIDTH;
             this.Height = HEIGHT;
+        }
+
+        /// <summary>
+        /// Sets and gets the play piece for the tile.
+        /// </summary>
+        public PlayPiece PlayPiece
+        {
+            get { return _playPiece; }
+            set { _playPiece = value; Content = value == null ? null : value._playPieceImage; }
         }
     }
 }

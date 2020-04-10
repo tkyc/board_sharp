@@ -13,8 +13,9 @@ namespace BoardSharp.Chess
         /// <summary>
         /// Rook constructor.
         /// </summary>
+        /// <param name="name">Name of the rook (black_rook or white_rook).</param>
         /// <param name="position">The initial/current position of the rook.</param>
-        public Rook(Tile position) : base("Rook", position, ChessPieceEnum.Rook) {}
+        public Rook(string name, Tile position) : base(name, position, ChessPieceEnum.Rook) {}
 
         /// <summary>
         /// Determines if the move for a rook piece is valid.

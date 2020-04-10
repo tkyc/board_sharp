@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using BoardSharp.Common;
+﻿using BoardSharp.Common;
 
 namespace BoardSharp.Chess
 {
@@ -35,8 +32,8 @@ namespace BoardSharp.Chess
         {
             if (isValidMove(_tile, tile))
             {
-                _tile._playPiece = null;
-                tile._playPiece = this;
+                _tile.PlayPiece = null;
+                tile.PlayPiece = this;
                 _tile = tile;
 
                 return true;

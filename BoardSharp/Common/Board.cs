@@ -72,13 +72,18 @@ namespace BoardSharp.Common
         }
 
         /// <summary>
+        /// Resets the play pieces on the board.
+        /// </summary>
+        public abstract void resetBoard();
+
+        /// <summary>
         /// Gets the play piece at the specified tile.
         /// </summary>
         /// <param name="tile">The tile to get the play piece at.</param>
         /// <returns>The play piece at the designated tile.</returns>
         public virtual PlayPiece GetPlayPieceAt(Tile tile)
         {
-            return tile._playPiece;
+            return tile.PlayPiece;
         }
 
         /// <summary>

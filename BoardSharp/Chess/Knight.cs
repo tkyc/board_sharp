@@ -13,8 +13,9 @@ namespace BoardSharp.Chess
         /// <summary>
         /// Knight constructor.
         /// </summary>
+        /// <param name="name">Name of the knight (black_knight or white_knight).</param>
         /// <param name="position">The initial/current position of the knight.</param>
-        public Knight(Tile position) : base("Knight", position, ChessPieceEnum.Knight) {}
+        public Knight(string name, Tile position) : base(name, position, ChessPieceEnum.Knight) {}
 
         /// <summary>
         /// Determines if the move for a knight piece is valid.

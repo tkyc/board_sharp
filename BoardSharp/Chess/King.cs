@@ -13,8 +13,9 @@ namespace BoardSharp.Chess
         /// <summary>
         /// King constructor.
         /// </summary>
+        /// <param name="name">Name of the king (black_king or white_king).</param>
         /// <param name="position">The initial/current position of the king.</param>
-        public King(Tile position) : base("King", position, ChessPieceEnum.King) {}
+        public King(string name, Tile position) : base(name, position, ChessPieceEnum.King) {}
 
         /// <summary>
         /// Determines if the move for a king piece is valid.

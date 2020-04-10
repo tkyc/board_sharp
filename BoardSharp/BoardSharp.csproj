@@ -7,7 +7,35 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Halma\" />
+    <None Remove="Chess\Images\black_bishop.png" />
+    <None Remove="Chess\Images\black_king.png" />
+    <None Remove="Chess\Images\black_knight.png" />
+    <None Remove="Chess\Images\black_pawn.png" />
+    <None Remove="Chess\Images\black_queen.png" />
+    <None Remove="Chess\Images\black_rook.png" />
+    <None Remove="Chess\Images\source.png" />
+    <None Remove="Chess\Images\white_bishop.png" />
+    <None Remove="Chess\Images\white_king.png" />
+    <None Remove="Chess\Images\white_knight.png" />
+    <None Remove="Chess\Images\white_pawn.png" />
+    <None Remove="Chess\Images\white_queen.png" />
+    <None Remove="Chess\Images\white_rook.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Chess\Images\black_bishop.png" />
+    <Resource Include="Chess\Images\black_king.png" />
+    <Resource Include="Chess\Images\black_knight.png" />
+    <Resource Include="Chess\Images\black_pawn.png" />
+    <Resource Include="Chess\Images\black_queen.png" />
+    <Resource Include="Chess\Images\black_rook.png" />
+    <Resource Include="Chess\Images\source.png" />
+    <Resource Include="Chess\Images\white_bishop.png" />
+    <Resource Include="Chess\Images\white_king.png" />
+    <Resource Include="Chess\Images\white_knight.png" />
+    <Resource Include="Chess\Images\white_pawn.png" />
+    <Resource Include="Chess\Images\white_queen.png" />
+    <Resource Include="Chess\Images\white_rook.png" />
   </ItemGroup>
 
 </Project>

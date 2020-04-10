@@ -13,8 +13,9 @@ namespace BoardSharp.Chess
         /// <summary>
         /// Bishop constructor.
         /// </summary>
+        /// <param name="name">Name of the bishop (black_bishop or white_bishop).</param> 
         /// <param name="position">The initial/current position of the bishop.</param>
-        public Bishop(Tile position) : base("Bishop", position, ChessPieceEnum.Bishop) {}
+        public Bishop(string name, Tile position) : base(name, position, ChessPieceEnum.Bishop) {}
 
         /// <summary>
         /// Determines if the move for a bishop piece is valid.

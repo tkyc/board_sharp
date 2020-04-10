@@ -24,6 +24,7 @@ namespace BoardSharp
             InitializeComponent();
 
             ChessBoard myChessBoard = new ChessBoard();
+            myChessBoard.resetBoard();
             myChessBoard.InitBoardGui(this);
 
             Trace.WriteLine(myChessBoard);

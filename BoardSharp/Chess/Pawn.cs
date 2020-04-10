@@ -13,8 +13,9 @@ namespace BoardSharp.Chess
         /// <summary>
         /// Pawn constructor.
         /// </summary>
+        /// <param name="name">Name of the pawn (black_pawn or white_pawn).</param>
         /// <param name="position">The initial/current position of the pawn.</param>
-        public Pawn(Tile position) : base("Pawn", position, ChessPieceEnum.Pawn) {}
+        public Pawn(string name, Tile position) : base(name, position, ChessPieceEnum.Pawn) {}
 
         /// <summary>
         /// Determines if the move for a pawn piece is valid.
