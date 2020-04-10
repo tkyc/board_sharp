@@ -74,7 +74,7 @@ namespace BoardSharp.Common
         /// <summary>
         /// Resets the play pieces on the board.
         /// </summary>
-        public abstract void resetBoard();
+        public abstract void ResetBoard();
 
         /// <summary>
         /// Gets the play piece at the specified tile.

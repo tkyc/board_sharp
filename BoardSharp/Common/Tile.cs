@@ -42,11 +42,11 @@ namespace BoardSharp.Common
         /// <param name="y">The tile's y-coordinate.</param>
         public Tile(int x, int y)
         {
-            this._x = x;
-            this._y = y;
-            this._playPiece = null;
-            this.Width = WIDTH;
-            this.Height = HEIGHT;
+            _x = x;
+            _y = y;
+            _playPiece = null;
+            Width = WIDTH;
+            Height = HEIGHT;
         }
 
         /// <summary>
