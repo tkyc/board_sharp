@@ -15,7 +15,7 @@ namespace BoardSharp.Chess
         /// </summary>
         /// <param name="name">Name of the queen (black_queen or white_queen).</param>
         /// <param name="position">The initial/current position of the queen.</param>
-        public Queen(string name, Tile position) : base(name, position, ChessPieceEnum.Queen) {}
+        public Queen(string name, Tile position) : base(name, position) {}
 
         /// <summary>
         /// Determines if the move for a queen piece is valid.
@@ -23,7 +23,7 @@ namespace BoardSharp.Chess
         /// <param name="fromTile">The inital tile of the queen piece.</param>
         /// <param name="toTile">The tile to move to.</param>
         /// <returns>A bool indicating whether the move is legal</returns>
-        public override bool isValidMove(Tile fromTile, Tile toTile)
+        public override bool IsValidMove(Tile fromTile, Tile toTile)
         {
             throw new NotImplementedException();
         }

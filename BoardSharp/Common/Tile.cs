@@ -50,6 +50,14 @@ namespace BoardSharp.Common
         }
 
         /// <summary>
+        /// Removes the play piece from this tile.
+        /// </summary>
+        public void RemovePlayPiece()
+        {
+            PlayPiece = null;
+        }
+
+        /// <summary>
         /// Sets and gets the play piece for the tile.
         /// </summary>
         public PlayPiece PlayPiece

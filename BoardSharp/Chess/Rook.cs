@@ -15,7 +15,7 @@ namespace BoardSharp.Chess
         /// </summary>
         /// <param name="name">Name of the rook (black_rook or white_rook).</param>
         /// <param name="position">The initial/current position of the rook.</param>
-        public Rook(string name, Tile position) : base(name, position, ChessPieceEnum.Rook) {}
+        public Rook(string name, Tile position) : base(name, position) {}
 
         /// <summary>
         /// Determines if the move for a rook piece is valid.
@@ -23,7 +23,7 @@ namespace BoardSharp.Chess
         /// <param name="fromTile">The inital tile of the pawn piece.</param>
         /// <param name="toTile">The tile to move to.</param>
         /// <returns>A bool indicating whether the move is legal</returns>
-        public override bool isValidMove(Tile fromTile, Tile toTile)
+        public override bool IsValidMove(Tile fromTile, Tile toTile)
         {
             throw new NotImplementedException();
         }

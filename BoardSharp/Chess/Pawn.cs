@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using BoardSharp.Common;
+﻿using BoardSharp.Common;
 
 namespace BoardSharp.Chess
 {
@@ -15,7 +12,7 @@ namespace BoardSharp.Chess
         /// </summary>
         /// <param name="name">Name of the pawn (black_pawn or white_pawn).</param>
         /// <param name="position">The initial/current position of the pawn.</param>
-        public Pawn(string name, Tile position) : base(name, position, ChessPieceEnum.Pawn) {}
+        public Pawn(string name, Tile position) : base(name, position) {}
 
         /// <summary>
         /// Determines if the move for a pawn piece is valid.
@@ -23,9 +20,9 @@ namespace BoardSharp.Chess
         /// <param name="fromTile">The inital tile of the pawn piece.</param>
         /// <param name="toTile">The tile to move to.</param>
         /// <returns>A bool indicating whether the move is legal</returns>
-        public override bool isValidMove(Tile fromTile, Tile toTile)
+        public override bool IsValidMove(Tile fromTile, Tile toTile)
         {
-            throw new NotImplementedException();
+            return base.IsValidMove(fromTile, toTile);
         }
     }
 }

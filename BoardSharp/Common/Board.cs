@@ -72,27 +72,19 @@ namespace BoardSharp.Common
         }
 
         /// <summary>
-        /// Resets the play pieces on the board.
-        /// </summary>
-        public abstract void ResetBoard();
-
-        /// <summary>
         /// Gets the play piece at the specified tile.
         /// </summary>
-        /// <param name="tile">The tile to get the play piece at.</param>
+        /// <param name="row">Row of play piece.</param>
+        /// <param name="column">Column of play piece.</param>
         /// <returns>The play piece at the designated tile.</returns>
-        public virtual PlayPiece GetPlayPieceAt(Tile tile)
+        public PlayPiece GetPlayPieceAt(int row, int column)
         {
-            return tile.PlayPiece;
+            return _tiles[row, column].PlayPiece;
         }
 
         /// <summary>
-        /// Sets the play piece at the designated tile. Depending on the game, the rules
-        /// that determines what where and how a play piece is set are different.
+        /// Resets the play pieces on the board.
         /// </summary>
-        /// <param name="tile">The tile to set the play piece at.</param>
-        /// <param name="playPiece">The play piece to move/set.</param>
-        /// <returns>A bool indicating if the move/set was successful.</returns>
-        public abstract bool SetPlayPieceAt(Tile tile, PlayPiece playPiece);
+        public abstract void ResetBoard();
     }
 }

@@ -5,34 +5,45 @@ namespace BoardSharp.Chess
     /// <summary>
     /// Generic chess play piece class.
     /// </summary>
-    public abstract class ChessPiece : PlayPiece, IPlayPiece
+    public abstract class ChessPiece : PlayPiece, IMove
     {
         /// <summary>
-        /// Chess piece type.
+        /// .png file names of white chess pieces
         /// </summary>
-        public ChessPieceEnum _type { get; }
+        public const string WHITE_PAWN = "white_pawn";
+        public const string WHITE_ROOK = "white_rook";
+        public const string WHITE_KNIGHT = "white_knight";
+        public const string WHITE_BISHOP = "white_bishop";
+        public const string WHITE_QUEEN = "white_queen";
+        public const string WHITE_KING = "white_king";
+
+        /// <summary>
+        /// .png file names of black chess pieces
+        /// </summary>
+        public const string BLACK_PAWN = "black_pawn";
+        public const string BLACK_ROOK = "black_rook";
+        public const string BLACK_KNIGHT = "black_knight";
+        public const string BLACK_BISHOP = "black_bishop";
+        public const string BLACK_QUEEN = "black_queen";
+        public const string BLACK_KING = "black_king";
 
         /// <summary>
         /// Chess piece constructor.
         /// </summary>
-        /// <param name="name">Name of the chess piece.</param>
+        /// <param name="name">Name of the chess piece. Corresponds to the chess piece image graphic.</param>
         /// <param name="tile">The initial/current position of the play piece.</param>
-        /// <param name="type">Type of chess piece.</param>
-        public ChessPiece(string name, Tile tile, ChessPieceEnum type) : base(name, tile)
-        {
-            _type = type;
-        }
+        public ChessPiece(string name, Tile tile) : base(name, tile) { }
 
         /// <summary>
         /// Moves play piece to designated board coordinates.
         /// </summary>
         /// <param name="tile">The board tile to move the play piece to.</param>
         /// <returns>A bool indicating whether the move was successful.</returns>
-        public bool moveTo(Tile tile)
+        public bool MoveTo(Tile tile)
         {
-            if (isValidMove(_tile, tile))
+            if (IsValidMove(_tile, tile))
             {
-                _tile.PlayPiece = null;
+                _tile.RemovePlayPiece();
                 tile.PlayPiece = this;
                 _tile = tile;
 
@@ -43,11 +54,14 @@ namespace BoardSharp.Chess
         }
 
         /// <summary>
-        /// Determines if the move for a play piece is valid.
+        /// Determines if the move for a chess piece is valid.
         /// </summary>
         /// <param name="fromTile">The inital tile of the play piece.</param>
         /// <param name="toTile">The tile to move to.</param>
         /// <returns>A bool indicating whether the move is legal</returns>
-        public abstract bool isValidMove(Tile fromTile, Tile toTile);
+        public virtual bool IsValidMove(Tile fromTile, Tile toTile)
+        {
+            return fromTile.PlayPiece != null && toTile.PlayPiece == null;
+        }
     }
 }

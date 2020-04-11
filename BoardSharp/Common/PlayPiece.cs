@@ -24,7 +24,7 @@ namespace BoardSharp.Common
         /// <summary>
         /// Play piece
         /// </summary>
-        /// <param name="name">Name of the play piece.</param>
+        /// <param name="name">Name of the play piece. Corresponds to the play piece image graphic.</param>
         /// <param name="tile">The initial/current position of the play piece.</param>
         public PlayPiece(string name,  Tile tile)
         {
