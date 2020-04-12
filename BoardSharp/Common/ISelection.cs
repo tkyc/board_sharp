@@ -1,33 +1,28 @@
 ﻿using System.Windows;
+using System.Windows.Media;
 
 namespace BoardSharp.Common
 {
     /// <summary>
-    /// Interface for play piece selection interaction.
+    /// Interface for general selection interaction.
     /// Derived board classes may or may not implement. Selection should be board level functionality b/c the board aggregates Tiles.
-    /// FYI, OnSelect should be first in event handler queue.
-    ///     Ex. Tile.Click += Onselect //OnSelect is first
+    /// 
+    /// FYI, there is a event handler queue.
+    ///     Ex. Tile.Click += Onselect //OnSelect is added first
     ///         Tile.Click += Select
     /// </summary>
     public interface ISelection
     {
         /// <summary>
-        /// The selected play piece.
+        /// The selected object.
         /// </summary>
-        public PlayPiece selectedPlayPiece { get; set; }
+        public object selected { get; set; }
 
         /// <summary>
-        /// Method to select play piece. Called if a play piece is not selected.
+        /// Method to select object.
         /// </summary>
-        /// <param name="sender">Tile object.</param>
+        /// <param name="sender">object calling event handler.</param>
         /// <param name="e">Event object.</param>
-        public void SelectPlayPiece(object sender, RoutedEventArgs e);
-
-        /// <summary>
-        /// Method to perform an on select function on play piece. Called if play piece is selected.
-        /// </summary>
-        /// <param name="sender">Tile object.</param>
-        /// <param name="e">Event object.</param>
-        public void OnSelectPlayPiece(object sender, RoutedEventArgs e);
+        public void HandleSelected(object sender, RoutedEventArgs e);
     }
 }

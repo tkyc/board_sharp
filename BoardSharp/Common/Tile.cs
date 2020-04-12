@@ -11,6 +11,16 @@ namespace BoardSharp.Common
     public sealed class Tile : Button
     {
         /// <summary>
+        /// The tile's width in pixels.
+        /// </summary>
+        public const int WIDTH = 80;
+
+        /// <summary>
+        /// The tiles's heigh in pixels.
+        /// </summary>
+        public const int HEIGHT = 80;
+
+        /// <summary>
         /// The current play piece on this tile.
         /// </summary>
         private PlayPiece _playPiece;
@@ -24,16 +34,6 @@ namespace BoardSharp.Common
         /// Tile y-coordinate.
         /// </summary>
         public int _y { get; }
-
-        /// <summary>
-        /// The tile's width in pixels.
-        /// </summary>
-        public const int WIDTH = 80;
-
-        /// <summary>
-        /// The tiles's heigh in pixels.
-        /// </summary>
-        public const int HEIGHT = 80;
 
         /// <summary>
         /// Tile constructor.

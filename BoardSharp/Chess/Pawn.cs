@@ -1,4 +1,6 @@
-﻿using BoardSharp.Common;
+﻿using System;
+using System.Diagnostics;
+using BoardSharp.Common;
 
 namespace BoardSharp.Chess
 {
@@ -7,6 +9,11 @@ namespace BoardSharp.Chess
     /// </summary>
     public class Pawn : ChessPiece
     {
+        /// <summary>
+        /// Pawns on the first turn can move 2 squares forward.
+        /// </summary>
+        private static bool _firstTurn = true;
+
         /// <summary>
         /// Pawn constructor.
         /// </summary>
@@ -22,7 +29,21 @@ namespace BoardSharp.Chess
         /// <returns>A bool indicating whether the move is legal</returns>
         public override bool IsValidMove(Tile fromTile, Tile toTile)
         {
-            return base.IsValidMove(fromTile, toTile);
+            bool @base= base.IsValidMove(fromTile, toTile);
+
+            bool pawn = ((Func<bool>)(() =>
+            {
+                //Can move 2 squares on first turn
+                bool firstTurn = _firstTurn && fromTile._x - toTile._x == 2;
+
+                if (firstTurn) _firstTurn = false;
+
+                //Can move 1 square forward
+                return fromTile._x - toTile._x == 1 || firstTurn;
+
+            }))();
+
+            return @base && pawn;
         }
     }
 }

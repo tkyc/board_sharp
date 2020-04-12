@@ -23,11 +23,11 @@ namespace BoardSharp
         {
             InitializeComponent();
 
-            ChessBoard myChessBoard = new ChessBoard();
-            myChessBoard.ResetBoard();
+            ChessBoard myChessBoard = new ChessBoard(Chess.Side.WHITE);
+            myChessBoard.ResetBoard(); //Chess pieces init
             myChessBoard.InitBoardGui(this);
-
-            Trace.WriteLine(myChessBoard);
+            
+            Trace.WriteLine(myChessBoard); //Debug
         }
     }
 }

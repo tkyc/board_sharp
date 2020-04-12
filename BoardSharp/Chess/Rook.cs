@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using BoardSharp.Common;
 
 namespace BoardSharp.Chess
@@ -25,7 +23,18 @@ namespace BoardSharp.Chess
         /// <returns>A bool indicating whether the move is legal</returns>
         public override bool IsValidMove(Tile fromTile, Tile toTile)
         {
-            throw new NotImplementedException();
+            bool @base = base.IsValidMove(fromTile, toTile);
+
+            bool rook = ((Func<bool>)(() =>
+            {
+                bool xDelta = fromTile._x - toTile._x == 0;
+                bool yDelta = fromTile._y - toTile._y == 0;
+                //TODO -- Determine obstruction in path
+                return xDelta ^ yDelta;
+
+            }))();
+
+            return @base && rook;
         }
     }
 }
