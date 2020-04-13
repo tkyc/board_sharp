@@ -13,7 +13,7 @@ namespace BoardSharp.Chess
         /// </summary>
         /// <param name="name">Name of the rook (black_rook or white_rook).</param>
         /// <param name="position">The initial/current position of the rook.</param>
-        public Rook(string name, Tile position) : base(name, position) {}
+        public Rook(string name, Tile position, Side side) : base(name, position, side) {}
 
         /// <summary>
         /// Determines if the move for a rook piece is valid.

@@ -18,8 +18,8 @@ namespace BoardSharp.Chess
         /// Pawn constructor.
         /// </summary>
         /// <param name="name">Name of the pawn (black_pawn or white_pawn).</param>
-        /// <param name="position">The initial/current position of the pawn.</param>
-        public Pawn(string name, Tile position) : base(name, position) {}
+        // <param name="position">The initial/current position of the pawn.</param>
+        public Pawn(string name, Tile position, Side side) : base(name, position, side) {}
 
         /// <summary>
         /// Determines if the move for a pawn piece is valid.
@@ -37,6 +37,9 @@ namespace BoardSharp.Chess
                 bool firstTurn = _firstTurn && fromTile._x - toTile._x == 2;
 
                 if (firstTurn) _firstTurn = false;
+
+                //Attack diagonally
+                //TODO -- attack diagonally
 
                 //Can move 1 square forward
                 return fromTile._x - toTile._x == 1 || firstTurn;

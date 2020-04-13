@@ -15,7 +15,7 @@ namespace BoardSharp.Chess
         /// </summary>
         /// <param name="name">Name of the queen (black_queen or white_queen).</param>
         /// <param name="position">The initial/current position of the queen.</param>
-        public Queen(string name, Tile position) : base(name, position) {}
+        public Queen(string name, Tile position, Side side) : base(name, position, side) {}
 
         /// <summary>
         /// Determines if the move for a queen piece is valid.

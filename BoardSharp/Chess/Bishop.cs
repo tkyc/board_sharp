@@ -15,7 +15,7 @@ namespace BoardSharp.Chess
         /// </summary>
         /// <param name="name">Name of the bishop (black_bishop or white_bishop).</param> 
         /// <param name="position">The initial/current position of the bishop.</param>
-        public Bishop(string name, Tile position) : base(name, position) {}
+        public Bishop(string name, Tile position, Side side) : base(name, position, side) {}
 
         /// <summary>
         /// Determines if the move for a bishop piece is valid.

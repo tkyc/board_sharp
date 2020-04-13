@@ -15,7 +15,7 @@ namespace BoardSharp.Chess
         /// </summary>
         /// <param name="name">Name of the king (black_king or white_king).</param>
         /// <param name="position">The initial/current position of the king.</param>
-        public King(string name, Tile position) : base(name, position) {}
+        public King(string name, Tile position, Side side) : base(name, position, side) {}
 
         /// <summary>
         /// Determines if the move for a king piece is valid.

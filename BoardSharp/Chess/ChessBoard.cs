@@ -81,20 +81,20 @@ namespace BoardSharp.Chess
             return (tile._x, tile._y) switch
             {
                 //White chess pieces initialization
-                var (x, _) when x == 6 - pawn                                        => tile.PlayPiece = new Pawn(ChessPiece.WHITE_PAWN, tile),
-                var (x, y) when x == 7 - (int) side && (y == 0 || y == 7)            => tile.PlayPiece = new Rook(ChessPiece.WHITE_ROOK, tile),
-                var (x, y) when x == 7 - (int) side && (y == 1 || y == 6)            => tile.PlayPiece = new Knight(ChessPiece.WHITE_KNIGHT, tile),
-                var (x, y) when x == 7 - (int) side && (y == 2 || y == 5)            => tile.PlayPiece = new Bishop(ChessPiece.WHITE_BISHOP, tile),
-                var (x, y) when x == 7 - (int) side && y == Math.Abs(3 - (int) side) => tile.PlayPiece = new Queen(ChessPiece.WHITE_QUEEN, tile),
-                var (x, y) when x == 7 - (int) side && y == Math.Abs(4 - (int) side) => tile.PlayPiece = new King(ChessPiece.WHITE_KING, tile),
+                var (x, _) when x == 6 - pawn                                        => tile.PlayPiece = new Pawn(ChessPiece.WHITE_PAWN, tile, Side.WHITE),
+                var (x, y) when x == 7 - (int) side && (y == 0 || y == 7)            => tile.PlayPiece = new Rook(ChessPiece.WHITE_ROOK, tile, Side.WHITE),
+                var (x, y) when x == 7 - (int) side && (y == 1 || y == 6)            => tile.PlayPiece = new Knight(ChessPiece.WHITE_KNIGHT, tile, Side.WHITE),
+                var (x, y) when x == 7 - (int) side && (y == 2 || y == 5)            => tile.PlayPiece = new Bishop(ChessPiece.WHITE_BISHOP, tile, Side.WHITE),
+                var (x, y) when x == 7 - (int) side && y == Math.Abs(3 - (int) side) => tile.PlayPiece = new Queen(ChessPiece.WHITE_QUEEN, tile, Side.WHITE),
+                var (x, y) when x == 7 - (int) side && y == Math.Abs(4 - (int) side) => tile.PlayPiece = new King(ChessPiece.WHITE_KING, tile, Side.WHITE),
 
                 //Black cess pieces initi(int) sidezation
-                var (x, _) when x == 1 + pawn                                        => tile.PlayPiece = new Pawn(ChessPiece.BLACK_PAWN, tile),
-                var (x, y) when x == 0 + (int) side && (y == 0 || y == 7)            => tile.PlayPiece = new Rook(ChessPiece.BLACK_ROOK, tile),
-                var (x, y) when x == 0 + (int) side && (y == 1 || y == 6)            => tile.PlayPiece = new Knight(ChessPiece.BLACK_KNIGHT, tile),
-                var (x, y) when x == 0 + (int) side && (y == 2 || y == 5)            => tile.PlayPiece = new Bishop(ChessPiece.BLACK_BISHOP, tile),
-                var (x, y) when x == 0 + (int) side && y == Math.Abs(3 - (int) side) => tile.PlayPiece = new Queen(ChessPiece.BLACK_QUEEN, tile),
-                var (x, y) when x == 0 + (int) side && y == Math.Abs(4 - (int) side) => tile.PlayPiece = new King(ChessPiece.BLACK_KING, tile),
+                var (x, _) when x == 1 + pawn                                        => tile.PlayPiece = new Pawn(ChessPiece.BLACK_PAWN, tile, Side.BLACK),
+                var (x, y) when x == 0 + (int) side && (y == 0 || y == 7)            => tile.PlayPiece = new Rook(ChessPiece.BLACK_ROOK, tile, Side.BLACK),
+                var (x, y) when x == 0 + (int) side && (y == 1 || y == 6)            => tile.PlayPiece = new Knight(ChessPiece.BLACK_KNIGHT, tile, Side.BLACK),
+                var (x, y) when x == 0 + (int) side && (y == 2 || y == 5)            => tile.PlayPiece = new Bishop(ChessPiece.BLACK_BISHOP, tile, Side.BLACK),
+                var (x, y) when x == 0 + (int) side && y == Math.Abs(3 - (int) side) => tile.PlayPiece = new Queen(ChessPiece.BLACK_QUEEN, tile, Side.BLACK),
+                var (x, y) when x == 0 + (int) side && y == Math.Abs(4 - (int) side) => tile.PlayPiece = new King(ChessPiece.BLACK_KING, tile, Side.BLACK),
                 _ => null
             };
         }
@@ -120,20 +120,20 @@ namespace BoardSharp.Chess
             switch (chessPiece)
             {
                 //Black chess pieces initialization
-                case 0:           tile.PlayPiece = new Pawn(ChessPiece.BLACK_PAWN, tile); break;
-                case 1: case 8:   tile.PlayPiece = new Rook(ChessPiece.BLACK_ROOK, tile); break;
-                case 2: case 7:   tile.PlayPiece = new Knight(ChessPiece.BLACK_KNIGHT, tile); break;
-                case 3: case 6:   tile.PlayPiece = new Bishop(ChessPiece.BLACK_BISHOP, tile); break;
-                case 4:           tile.PlayPiece = new Queen(ChessPiece.BLACK_QUEEN, tile); break;
-                case 5:           tile.PlayPiece = new King(ChessPiece.BLACK_KING, tile); break;
+                case 0:           tile.PlayPiece = new Pawn(ChessPiece.BLACK_PAWN, tile, Side.BLACK); break;
+                case 1: case 8:   tile.PlayPiece = new Rook(ChessPiece.BLACK_ROOK, tile, Side.BLACK); break;
+                case 2: case 7:   tile.PlayPiece = new Knight(ChessPiece.BLACK_KNIGHT, tile, Side.BLACK); break;
+                case 3: case 6:   tile.PlayPiece = new Bishop(ChessPiece.BLACK_BISHOP, tile, Side.BLACK); break;
+                case 4:           tile.PlayPiece = new Queen(ChessPiece.BLACK_QUEEN, tile, Side.BLACK); break;
+                case 5:           tile.PlayPiece = new King(ChessPiece.BLACK_KING, tile, Side.BLACK); break;
 
                 //White chess pieces initialization
-                case 17:          tile.PlayPiece = new Pawn(ChessPiece.WHITE_PAWN, tile); break;
-                case 16: case 9:  tile.PlayPiece = new Rook(ChessPiece.WHITE_ROOK, tile); break;
-                case 15: case 10: tile.PlayPiece = new Knight(ChessPiece.WHITE_KNIGHT, tile); break;
-                case 14: case 11: tile.PlayPiece = new Bishop(ChessPiece.WHITE_BISHOP, tile); break;
-                case 13:          tile.PlayPiece = new King(ChessPiece.WHITE_KING, tile); break;
-                case 12:          tile.PlayPiece = new Queen(ChessPiece.WHITE_QUEEN, tile); break;
+                case 17:          tile.PlayPiece = new Pawn(ChessPiece.WHITE_PAWN, tile, Side.WHITE); break;
+                case 16: case 9:  tile.PlayPiece = new Rook(ChessPiece.WHITE_ROOK, tile, Side.WHITE); break;
+                case 15: case 10: tile.PlayPiece = new Knight(ChessPiece.WHITE_KNIGHT, tile, Side.WHITE); break;
+                case 14: case 11: tile.PlayPiece = new Bishop(ChessPiece.WHITE_BISHOP, tile, Side.WHITE); break;
+                case 13:          tile.PlayPiece = new King(ChessPiece.WHITE_KING, tile, Side.WHITE); break;
+                case 12:          tile.PlayPiece = new Queen(ChessPiece.WHITE_QUEEN, tile, Side.WHITE); break;
                 
                 //If calculation of tile's _x and _y does not match a case => do not add a chess piece to tile
                 default: return;

@@ -15,7 +15,7 @@ namespace BoardSharp.Chess
         /// </summary>
         /// <param name="name">Name of the knight (black_knight or white_knight).</param>
         /// <param name="position">The initial/current position of the knight.</param>
-        public Knight(string name, Tile position) : base(name, position) {}
+        public Knight(string name, Tile position, Side side) : base(name, position, side) {}
 
         /// <summary>
         /// Determines if the move for a knight piece is valid.

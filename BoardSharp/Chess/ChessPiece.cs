@@ -8,6 +8,11 @@ namespace BoardSharp.Chess
     public abstract class ChessPiece : PlayPiece, IMove
     {
         /// <summary>
+        /// The side of the chess piece.
+        /// </summary>
+        protected Side _side;
+
+        /// <summary>
         /// .png file names of white chess pieces
         /// </summary>
         public const string WHITE_PAWN = "white_pawn";
@@ -32,7 +37,10 @@ namespace BoardSharp.Chess
         /// </summary>
         /// <param name="name">Name of the chess piece. Corresponds to the chess piece image graphic.</param>
         /// <param name="tile">The initial/current position of the play piece.</param>
-        public ChessPiece(string name, Tile tile) : base(name, tile) { }
+        public ChessPiece(string name, Tile tile, Side side) : base(name, tile) 
+        {
+            _side = side;
+        }
 
         /// <summary>
         /// Moves play piece to designated board coordinates.
@@ -61,7 +69,8 @@ namespace BoardSharp.Chess
         /// <returns>A bool indicating whether the move is legal</returns>
         public virtual bool IsValidMove(Tile fromTile, Tile toTile)
         {
-            return fromTile.PlayPiece != null && toTile.PlayPiece == null;
+            return fromTile.PlayPiece != null && toTile.PlayPiece == null 
+                || fromTile.PlayPiece != null && ((ChessPiece)fromTile.PlayPiece)._side != ((ChessPiece)toTile.PlayPiece)._side;
         }
     }
 }
