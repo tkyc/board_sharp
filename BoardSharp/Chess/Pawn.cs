@@ -31,7 +31,7 @@ namespace BoardSharp.Chess
         {
             bool @base= base.IsValidMove(fromTile, toTile);
 
-            bool pawn = ((Func<bool>)(() =>
+            bool isValid = ((Func<bool>)(() =>
             {
                 //Can move 2 squares on first turn
                 bool firstTurn = _firstTurn && fromTile._x - toTile._x == 2;
@@ -43,7 +43,7 @@ namespace BoardSharp.Chess
 
             }))();
 
-            return @base && pawn;
+            return @base && isValid;
         }
     }
 }

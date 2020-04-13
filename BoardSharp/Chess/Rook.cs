@@ -25,7 +25,7 @@ namespace BoardSharp.Chess
         {
             bool @base = base.IsValidMove(fromTile, toTile);
 
-            bool rook = ((Func<bool>)(() =>
+            bool isValid = ((Func<bool>)(() =>
             {
                 bool xDelta = fromTile._x - toTile._x == 0;
                 bool yDelta = fromTile._y - toTile._y == 0;
@@ -34,7 +34,7 @@ namespace BoardSharp.Chess
 
             }))();
 
-            return @base && rook;
+            return @base && isValid;
         }
     }
 }

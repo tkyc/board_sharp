@@ -25,7 +25,23 @@ namespace BoardSharp.Chess
         /// <returns>A bool indicating whether the move is legal</returns>
         public override bool IsValidMove(Tile fromTile, Tile toTile)
         {
-            throw new NotImplementedException();
+            bool @base = base.IsValidMove(fromTile, toTile);
+
+            bool isValid = ((Func<bool>)(() =>
+            {
+                //Vertial and horizontal
+                bool xDeltaLinear = fromTile._x - toTile._x == 0;
+                bool yDeltaLinear = fromTile._y - toTile._y == 0;
+
+                //Diagonal
+                int xDeltaDiagonal = Math.Abs(fromTile._x - toTile._x);
+                int yDeltaDiagonal = Math.Abs(fromTile._y - toTile._y);
+
+                return xDeltaLinear ^ yDeltaLinear || xDeltaDiagonal == yDeltaDiagonal;
+
+            }))();
+
+            return @base && isValid;
         }
     }
 }
