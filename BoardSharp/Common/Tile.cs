@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace BoardSharp.Common
@@ -8,7 +9,7 @@ namespace BoardSharp.Common
     /// <summary>
     /// Tile class. A tile on the game board.
     /// </summary>
-    public sealed class Tile : Button
+    public class Tile : Button
     {
         /// <summary>
         /// The tile's width in pixels.
@@ -34,6 +35,8 @@ namespace BoardSharp.Common
         /// Tile y-coordinate.
         /// </summary>
         public int _y { get; }
+
+        public static object selected { get; set; }
 
         /// <summary>
         /// Tile constructor.

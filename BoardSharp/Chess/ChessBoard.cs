@@ -20,7 +20,7 @@ namespace BoardSharp.Chess
         /// <summary>
         /// The currently selected chess piece.
         /// </summary>
-        public object selected { get; set; }
+        public static object selected { get; set; }
 
         /// <summary>
         /// ChessBoard constructor.

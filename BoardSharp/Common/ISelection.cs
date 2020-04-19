@@ -5,7 +5,7 @@ namespace BoardSharp.Common
 {
     /// <summary>
     /// Interface for general selection interaction.
-    /// Derived board classes may or may not implement. Selection should be board level functionality b/c the board aggregates Tiles.
+    /// Derived board classes may or may not implement. Selection should be board or tile level functionality -- depends on the game.
     /// 
     /// FYI, there is a event handler queue.
     ///     Ex. Tile.Click += Onselect //OnSelect is added first
@@ -16,7 +16,7 @@ namespace BoardSharp.Common
         /// <summary>
         /// The selected object.
         /// </summary>
-        public object selected { get; set; }
+        public static object selected { get; set; }
 
         /// <summary>
         /// Method to select object.

@@ -69,6 +69,7 @@ namespace BoardSharp.Chess
         /// <returns>A bool indicating whether the move is legal</returns>
         public virtual bool IsValidMove(Tile fromTile, Tile toTile)
         {
+            //From tile must have a chess piece selected and to tile must be free or contains opposing player's chess piece
             return fromTile.PlayPiece != null && toTile.PlayPiece == null 
                 || fromTile.PlayPiece != null && ((ChessPiece)fromTile.PlayPiece)._side != ((ChessPiece)toTile.PlayPiece)._side;
         }

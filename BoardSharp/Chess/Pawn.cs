@@ -10,11 +10,6 @@ namespace BoardSharp.Chess
     public class Pawn : ChessPiece
     {
         /// <summary>
-        /// Pawns on the first turn can move 2 squares forward.
-        /// </summary>
-        private static bool _firstTurn = true;
-
-        /// <summary>
         /// Pawn constructor.
         /// </summary>
         /// <param name="name">Name of the pawn (black_pawn or white_pawn).</param>
@@ -34,9 +29,7 @@ namespace BoardSharp.Chess
             bool isValid = ((Func<bool>)(() =>
             {
                 //Can move 2 squares on first turn
-                bool firstTurn = _firstTurn && fromTile._x - toTile._x == 2;
-
-                if (firstTurn) _firstTurn = false;
+                bool firstTurn = fromTile._x == 6 && fromTile._x - toTile._x == 2;
 
                 //Attack diagonally
                 //TODO -- attack diagonally
