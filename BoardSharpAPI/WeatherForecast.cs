@@ -1,6 +1,6 @@
 using System;
 
-namespace Server
+namespace BoardSharpAPI
 {
     public class WeatherForecast
     {
